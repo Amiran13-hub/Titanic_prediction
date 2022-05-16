@@ -7,6 +7,8 @@ The solution has been developed using FastAPI for defining API endpoints.
 using command 'docker-compose up' we will get API endpoint.
 
 In order to access API endpoint, navigate to http://0.0.0.0:8000/docs 
+![image](https://user-images.githubusercontent.com/72340440/168650553-e78cabfb-9a64-4bb3-b2fb-a1e8954bc5c8.png)
+
 
 after lunch API we will see some parameters:
  1. Pclass: input [1,2,3] we have only 3 passenger class
