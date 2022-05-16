@@ -1,4 +1,4 @@
-problem definition
+# problem definition
 
-This project is about Titanic. We have known data which contains information about survived and non survived people. 
+This project is about Titanic. We have known data which contains information about survived and non survived people.
 Purpose of this project is to predict who has chance to survive on Titanic ship.
