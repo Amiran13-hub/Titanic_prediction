@@ -1,5 +1,5 @@
 # Titanic_prediction
-[problem definition](problem) 
+[problem definition](/docs/problem) 
 
 # solution
 The solution has been developed using FastAPI for defining API endpoints.
