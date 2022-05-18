@@ -18,5 +18,5 @@ after lunch API we will see some parameters:
  5. Parents_Children: input [0, 6] range number of Parents/Children from 0 to 6
  6. Fare: input [0, 512.3292] range of fare from 0 to 512.3292
 
-After correctly input all parameters API will give us probability if passenger Survived or not.
+After correctly filling all field API will give us probability if passenger Survived or not.
 ![image](https://user-images.githubusercontent.com/72340440/168650707-81186358-4159-4efe-a32e-5ed17ee552f2.png)
