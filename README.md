@@ -10,7 +10,7 @@ In order to access API endpoint, navigate to http://0.0.0.0:8000/docs
 ![image](https://user-images.githubusercontent.com/72340440/168650553-e78cabfb-9a64-4bb3-b2fb-a1e8954bc5c8.png)
 
 
-after lunch API we will see some parameters:
+after launch API we will see some parameters:
  1. Pclass: input [1,2,3] we have only 3 passenger class
  2. male: input (0 or 1)  this parameter is generated from parameter Sex where 1 means that passenger is male, 0 means female
  3. Age: input [0.42, 80] range of years from 0.42 to 80
