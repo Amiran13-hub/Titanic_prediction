@@ -32,25 +32,11 @@ y = df['Survived'].values
 
 # add prediction model
 model = LogisticRegression()
-# input data to prediction model
-def nosplit_pred():
-    model.fit(X,y)
-    pred = model.predict(X)
-    # print(pred)
-    y_pred = model.predict(X)
-    print("'nosplit' sum of True predictions:", (y == y_pred).sum())  # how many true prediction
-    print("'nosplit' accuracy:", ((y == y_pred).sum() / y.shape[0]))  # accuaracy in percents
-    print("'nosplit' model score:", model.score(X, y))  # accuracy with score mathod
-    print('model_coef:',model.coef_, 'model_intercpt:', model.intercept_)
-    return
 
 # train-test data split
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=27)
 
 def datasplit_pred():
-    print("'split' whole dataset:", X.shape, y.shape)
-    print("'split' training set:", X_train.shape, y_train.shape)
-    print("'split' test set:", X_test.shape, y_test.shape)
 
     model.fit(X_train, y_train)
     print("'split' model.score:", model.score(X_test, y_test))
@@ -77,7 +63,7 @@ def Kfold_model():
     print("K_fold mean score:", np.mean(scores))
     return
 
-all = "plot_data()", "nosplit_pred()", "datasplit_pred()", "Kfold_model()"
+all = "plot_data()", "datasplit_pred()", "Kfold_model()"
 print("Functions", all)
 
 output = datasplit_pred()
