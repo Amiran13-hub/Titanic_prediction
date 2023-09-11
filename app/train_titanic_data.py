@@ -1,23 +1,26 @@
-import pandas as pd
+import matplotlib
 import numpy as np
+import pandas as pd
+
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
+from joblib import dump
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.model_selection import KFold
+from sklearn.model_selection import train_test_split
+
 # import data frame to variable
 df = pd.read_csv('data/titanic.csv')
 print(df.head())
 print(df.describe())
 
-import matplotlib
-matplotlib.use('TkAgg')
-import matplotlib.pyplot as plt
 # plot data with or without diff colors
 def plot_data():
     plt.xlabel('Age')
     plt.ylabel('Fare')
     plt.scatter(df['Age'], df['Fare'], c=df['Pclass'])
     plt.show()
-# plot_data()
-
-# logistic regresion
-from sklearn.linear_model import LogisticRegression
 
 # add new boolean column into data
 df['male'] = df['Sex'] == 'male'
@@ -39,11 +42,9 @@ def nosplit_pred():
     print("'nosplit' accuracy:", ((y == y_pred).sum() / y.shape[0]))  # accuaracy in percents
     print("'nosplit' model score:", model.score(X, y))  # accuracy with score mathod
     print('model_coef:',model.coef_, 'model_intercpt:', model.intercept_)
-# nosplit_pred()
+    return
 
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 # train-test data split
-from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=27)
 
 def datasplit_pred():
@@ -59,9 +60,7 @@ def datasplit_pred():
     print("'split' precision:", precision_score(y_test, y_pred))
     print("'split' recall:", recall_score(y_test, y_pred))
     print("'split' f1_score:", f1_score(y_test, y_pred))
-# datasplit_pred()
-
-from sklearn.model_selection import KFold
+    return
 
 def Kfold_model():
     X = df[['Pclass', 'male', 'Age', 'Siblings/Spouses', 'Parents/Children', 'Fare']].values
@@ -76,14 +75,14 @@ def Kfold_model():
         scores.append(model.score(X_test, y_test))
     print("K_fold scores:", scores)
     print("K_fold mean score:", np.mean(scores))
-# Kfold_model()
+    return
 
 all = "plot_data()", "nosplit_pred()", "datasplit_pred()", "Kfold_model()"
 print("Functions", all)
 
 output = datasplit_pred()
 # print(output)
-from joblib import dump
+
 dump(model, 'output.joblib')
 
 
