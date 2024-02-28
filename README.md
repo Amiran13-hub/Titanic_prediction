@@ -1,6 +1,7 @@
 # Titanic_prediction
 [problem definition](/docs/problem) 
 
+[docs](/.swm/snippet-train_titanic_datapy.lm990v48.sw.md)
 # solution
 The solution has been developed using FastAPI for defining API endpoints.
 
